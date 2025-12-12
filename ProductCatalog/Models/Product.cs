@@ -9,5 +9,4 @@ public sealed class Product : BaseEntity
     public decimal Price { get; set; }
     public int StockQuantity { get; set; }
 
-    public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 }
