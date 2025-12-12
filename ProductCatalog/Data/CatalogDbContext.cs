@@ -95,6 +95,17 @@ namespace ProductCatalog.Data
                       .OnDelete(DeleteBehavior.Restrict);
             });
 
+            modelBuilder.Entity<Product>(entity =>
+            {
+                entity.HasKey(p => p.Id);
+                entity.Property(p => p.Name).IsRequired().HasMaxLength(200);
+                entity.Property(p => p.Price).HasColumnType("decimal(18,2)");
+
+                entity.HasMany(p => p.Pictures)
+                      .WithOne(pic => pic.Product)
+                      .HasForeignKey(pic => pic.ProductId);
+            });
+
             modelBuilder.Entity<User>(entity =>
             {
                 entity.HasIndex(u => u.Email).IsUnique();

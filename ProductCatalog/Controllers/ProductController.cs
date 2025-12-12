@@ -8,58 +8,114 @@ namespace ProductCatalog.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class ProductsController : ControllerBase
+    public class ProductController : ControllerBase
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IProductRepository _productRepository;
 
-        public ProductsController(IUnitOfWork unitOfWork)
+        public ProductController(IProductRepository productRepository)
         {
-            _unitOfWork = unitOfWork;
+            _productRepository = productRepository;
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<ApiResponse<Product>>> GetById(Guid id)
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] ProductDto.CreateProductRequest request)
         {
-            var result = await _unitOfWork.Products.GetByIdAsync(id);
-            if (!result.Success) return NotFound(result);
+            var product = new Product
+            {
+                Name = request.Name,
+                Description = request.Description ?? string.Empty,
+                Price = request.Price,
+                StockQuantity = request.StockQuantity
+            };
 
-            return Ok(result);
+            var result = await _productRepository.AddAsync(product);
+
+            if (!result.Success)
+                return BadRequest(result.Message);
+
+            var response = MapToResponse(result.Data);
+            return Ok(response);
         }
 
-        [HttpGet("all")]
-        public async Task<ActionResult<ApiResponse<IEnumerable<Product>>>> GetAll()
+        private object MapToResponse(bool data)
         {
-            var result = await _unitOfWork.Products.GetAllAsync();
-            if (!result.Success) return BadRequest(result);
-
-            return Ok(result);
+            throw new NotImplementedException();
         }
 
-        [HttpPost("add")]
-        public async Task<ActionResult<ApiResponse<bool>>> AddProduct([FromBody] Product product)
+        [HttpPut]
+        public async Task<IActionResult> Update([FromBody] ProductDto.UpdateProductRequest request)
         {
-            var result = await _unitOfWork.Repository<Product>().AddAsync(product);
-            if (!result.Success) return BadRequest(result);
+            var product = new Product
+            {
+                Id = request.Id,
+                Name = request.Name,
+                Description = request.Description ?? string.Empty,
+                Price = request.Price,
+                StockQuantity = request.StockQuantity
+            };
 
-            return Ok(result);
+            var result = await _productRepository.UpdateAsync(product);
+
+            if (!result.Success)
+                return BadRequest(result.Message);
+
+            var response = MapToResponse(result.Data);
+            return Ok(response);
         }
 
-        [HttpPut("update")]
-        public async Task<ActionResult<ApiResponse<bool>>> UpdateProduct([FromBody] Product product)
+        [HttpGet("in-stock")]
+        public async Task<IActionResult> GetProductsInStock()
         {
-            var result = await _unitOfWork.Repository<Product>().UpdateAsync(product);
-            if (!result.Success) return BadRequest(result);
+            var result = await _productRepository.GetProductsInStockAsync();
+            if (!result.Success)
+                return NotFound(result.Message);
 
-            return Ok(result);
+            var response = result.Data.Select(MapToResponse);
+            return Ok(response);
         }
 
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<ApiResponse<bool>>> SoftDelete(Guid id)
+        [HttpGet("search")]
+        public async Task<IActionResult> SearchByName([FromQuery] string keyword)
         {
-            var result = await _unitOfWork.Repository<Product>().SoftDeleteAsync(id, "system");
-            if (!result.Success) return BadRequest(result);
+            var result = await _productRepository.SearchByNameAsync(keyword);
+            if (!result.Success)
+                return NotFound(result.Message);
 
-            return Ok(result);
+            var response = result.Data.Select(MapToResponse);
+            return Ok(response);
+        }
+
+        [HttpGet("price-range")]
+        public async Task<IActionResult> GetProductsByPriceRange([FromQuery] decimal minPrice, [FromQuery] decimal maxPrice)
+        {
+            var result = await _productRepository.GetProductsByPriceRangeAsync(minPrice, maxPrice);
+            if (!result.Success)
+                return NotFound(result.Message);
+
+            var response = result.Data.Select(MapToResponse);
+            return Ok(response);
+        }
+
+        private static ProductDto.ProductResponse MapToResponse(Product product)
+        {
+            return new ProductDto.ProductResponse(
+                product.Id,
+                product.Name,
+                product.Description,
+                product.Price,
+                product.StockQuantity,
+                product.CreatedAt,
+                product.UpdatedAt,
+                product.CreatedBy,
+                product.UpdatedBy,
+                product.Pictures.Select(p => new ProductDto.PictureDto(
+                    p.Id,
+                    p.Url,
+                    p.AltText,
+                    p.MimeType,
+                    p.SortOrder
+                ))
+            );
         }
     }
 }

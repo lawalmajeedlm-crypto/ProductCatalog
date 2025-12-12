@@ -3,40 +3,96 @@
   "WorkspaceRootPath": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\productcatalog.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\productcatalog.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\dtos\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\dtos\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\dtos\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\dtos\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\dtos\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\dtos\\productdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\repositories\\orderitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\repositories\\orderitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\models\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\models\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\repositories\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\repositories\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\controllers\\orderitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\controllers\\orderitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\repositories\\cartitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\repositories\\cartitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\repositories\\cartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\repositories\\cartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\controllers\\cartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\controllers\\cartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\repositories\\interfaces\\icartitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\repositories\\interfaces\\icartitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\controllers\\cartitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\controllers\\cartitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\repositories\\interfaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\repositories\\interfaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\dtos\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\dtos\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\dtos\\cartdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\dtos\\cartdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\repositories\\interfaces\\icartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\repositories\\interfaces\\icartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\repositories\\interfaces\\iorderitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\repositories\\interfaces\\iorderitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|c:\\users\\hp\\source\\repos\\productcatalog\\productcatalog\\repositories\\interfaces\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1118AE39-54B5-4444-A9E4-0E539C459B65}|ProductCatalog\\ProductCatalog.csproj|solutionrelative:productcatalog\\repositories\\interfaces\\iorderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,71 +102,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 21,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GenericRepository.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\GenericRepository.cs",
-              "RelativeDocumentMoniker": "ProductCatalog\\Repositories\\GenericRepository.cs",
-              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\GenericRepository.cs",
-              "RelativeToolTip": "ProductCatalog\\Repositories\\GenericRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T11:44:55.145Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ProductCatalog",
-              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\ProductCatalog.csproj",
-              "RelativeDocumentMoniker": "ProductCatalog\\ProductCatalog.csproj",
-              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\ProductCatalog.csproj",
-              "RelativeToolTip": "ProductCatalog\\ProductCatalog.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-10T11:43:39.605Z",
+              "Title": "ApiResponse.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\DTOs\\ApiResponse.cs",
+              "RelativeDocumentMoniker": "ProductCatalog\\DTOs\\ApiResponse.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\DTOs\\ApiResponse.cs",
+              "RelativeToolTip": "ProductCatalog\\DTOs\\ApiResponse.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAkwA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T12:05:36.614Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "APiResponse.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\DTOs\\APiResponse.cs",
-              "RelativeDocumentMoniker": "ProductCatalog\\DTOs\\APiResponse.cs",
-              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\DTOs\\APiResponse.cs",
-              "RelativeToolTip": "ProductCatalog\\DTOs\\APiResponse.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAA0wAUAAAAsAAAAAAAAAA==",
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "ProductCatalog\\Repositories\\GenericRepository.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\GenericRepository.cs",
+              "RelativeToolTip": "ProductCatalog\\Repositories\\GenericRepository.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAcwFIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T11:31:25.598Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OrderDto.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\DTOs\\OrderDto.cs",
-              "RelativeDocumentMoniker": "ProductCatalog\\DTOs\\OrderDto.cs",
-              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\DTOs\\OrderDto.cs",
-              "RelativeToolTip": "ProductCatalog\\DTOs\\OrderDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T11:21:35.65Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProductDto.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\DTOs\\ProductDto.cs",
-              "RelativeDocumentMoniker": "ProductCatalog\\DTOs\\ProductDto.cs",
-              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\DTOs\\ProductDto.cs",
-              "RelativeToolTip": "ProductCatalog\\DTOs\\ProductDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-10T11:17:42.535Z",
+              "WhenOpened": "2025-12-12T12:01:50.696Z",
               "EditorCaption": ""
             },
             {
@@ -171,55 +188,257 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Cart.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Models\\Cart.cs",
+              "RelativeDocumentMoniker": "ProductCatalog\\Models\\Cart.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Models\\Cart.cs",
+              "RelativeToolTip": "ProductCatalog\\Models\\Cart.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T21:21:39.493Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
               "Title": "OrderItem.cs",
               "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Models\\OrderItem.cs",
               "RelativeDocumentMoniker": "ProductCatalog\\Models\\OrderItem.cs",
               "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Models\\OrderItem.cs",
               "RelativeToolTip": "ProductCatalog\\Models\\OrderItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwAkAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T21:28:01.423Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-08T21:28:01.423Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Models\\Order.cs",
-              "RelativeDocumentMoniker": "ProductCatalog\\Models\\Order.cs",
-              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Models\\Order.cs",
-              "RelativeToolTip": "ProductCatalog\\Models\\Order.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T21:27:40.865Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "ProductCatalog\\Models\\Product.cs",
-              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Models\\Product.cs",
-              "RelativeToolTip": "ProductCatalog\\Models\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T21:27:22.763Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "BaseEntity.cs",
               "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Models\\BaseEntity.cs",
               "RelativeDocumentMoniker": "ProductCatalog\\Models\\BaseEntity.cs",
               "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Models\\BaseEntity.cs",
               "RelativeToolTip": "ProductCatalog\\Models\\BaseEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T21:26:50.276Z",
+              "WhenOpened": "2025-12-08T21:26:50.276Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\Interfaces\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "ProductCatalog\\Repositories\\Interfaces\\IUnitOfWork.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\Interfaces\\IUnitOfWork.cs",
+              "RelativeToolTip": "ProductCatalog\\Repositories\\Interfaces\\IUnitOfWork.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA1wBMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T12:44:44.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "ProductCatalog\\Repositories\\UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\UnitOfWork.cs",
+              "RelativeToolTip": "ProductCatalog\\Repositories\\UnitOfWork.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAwwA4AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T12:47:08.335Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "ProductCatalog\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "ProductCatalog\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAACcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T20:32:50.186Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OrderItemsController.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Controllers\\OrderItemsController.cs",
+              "RelativeDocumentMoniker": "ProductCatalog\\Controllers\\OrderItemsController.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Controllers\\OrderItemsController.cs",
+              "RelativeToolTip": "ProductCatalog\\Controllers\\OrderItemsController.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAkwDoAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T20:37:00.027Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CartItemRepository.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\CartItemRepository.cs",
+              "RelativeDocumentMoniker": "ProductCatalog\\Repositories\\CartItemRepository.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\CartItemRepository.cs",
+              "RelativeToolTip": "ProductCatalog\\Repositories\\CartItemRepository.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAQwB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T15:19:48.795Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "ProductCatalog\\Repositories\\OrderRepository.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\OrderRepository.cs",
+              "RelativeToolTip": "ProductCatalog\\Repositories\\OrderRepository.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T14:49:08.293Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrderItemRepository.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\OrderItemRepository.cs",
+              "RelativeDocumentMoniker": "ProductCatalog\\Repositories\\OrderItemRepository.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\OrderItemRepository.cs",
+              "RelativeToolTip": "ProductCatalog\\Repositories\\OrderItemRepository.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwBMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T14:59:29.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CartRepository.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\CartRepository.cs",
+              "RelativeDocumentMoniker": "ProductCatalog\\Repositories\\CartRepository.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\CartRepository.cs",
+              "RelativeToolTip": "ProductCatalog\\Repositories\\CartRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T15:15:40.503Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "ProductCatalog\\Controllers\\OrdersController.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "ProductCatalog\\Controllers\\OrdersController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAowDkAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T20:34:42.209Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CartsController.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Controllers\\CartsController.cs",
+              "RelativeDocumentMoniker": "ProductCatalog\\Controllers\\CartsController.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Controllers\\CartsController.cs",
+              "RelativeToolTip": "ProductCatalog\\Controllers\\CartsController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAowDkAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T20:37:33.479Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ICartItemRepository.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\Interfaces\\ICartItemRepository.cs",
+              "RelativeDocumentMoniker": "ProductCatalog\\Repositories\\Interfaces\\ICartItemRepository.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\Interfaces\\ICartItemRepository.cs",
+              "RelativeToolTip": "ProductCatalog\\Repositories\\Interfaces\\ICartItemRepository.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T15:19:20.928Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CartItemsController.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Controllers\\CartItemsController.cs",
+              "RelativeDocumentMoniker": "ProductCatalog\\Controllers\\CartItemsController.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Controllers\\CartItemsController.cs",
+              "RelativeToolTip": "ProductCatalog\\Controllers\\CartItemsController.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAkwDMAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T20:38:14.434Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IGenericRepository.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\Interfaces\\IGenericRepository.cs",
+              "RelativeDocumentMoniker": "ProductCatalog\\Repositories\\Interfaces\\IGenericRepository.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\Interfaces\\IGenericRepository.cs",
+              "RelativeToolTip": "ProductCatalog\\Repositories\\Interfaces\\IGenericRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T13:50:33.845Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "OrderDto.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\DTOs\\OrderDto.cs",
+              "RelativeDocumentMoniker": "ProductCatalog\\DTOs\\OrderDto.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\DTOs\\OrderDto.cs",
+              "RelativeToolTip": "ProductCatalog\\DTOs\\OrderDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-10T11:21:35.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CartDto.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\DTOs\\CartDto.cs",
+              "RelativeDocumentMoniker": "ProductCatalog\\DTOs\\CartDto.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\DTOs\\CartDto.cs",
+              "RelativeToolTip": "ProductCatalog\\DTOs\\CartDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T12:37:00.258Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ICartRepository.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\Interfaces\\ICartRepository.cs",
+              "RelativeDocumentMoniker": "ProductCatalog\\Repositories\\Interfaces\\ICartRepository.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\Interfaces\\ICartRepository.cs",
+              "RelativeToolTip": "ProductCatalog\\Repositories\\Interfaces\\ICartRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T15:17:32.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "IOrderItemRepository.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\Interfaces\\IOrderItemRepository.cs",
+              "RelativeDocumentMoniker": "ProductCatalog\\Repositories\\Interfaces\\IOrderItemRepository.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\Interfaces\\IOrderItemRepository.cs",
+              "RelativeToolTip": "ProductCatalog\\Repositories\\Interfaces\\IOrderItemRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T14:59:57.297Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IOrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\Interfaces\\IOrderRepository.cs",
+              "RelativeDocumentMoniker": "ProductCatalog\\Repositories\\Interfaces\\IOrderRepository.cs",
+              "ToolTip": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\Repositories\\Interfaces\\IOrderRepository.cs",
+              "RelativeToolTip": "ProductCatalog\\Repositories\\Interfaces\\IOrderRepository.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAgAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-11T14:30:43.34Z"
             }
           ]
         }
