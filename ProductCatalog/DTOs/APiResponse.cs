@@ -1,21 +1,21 @@
 ﻿namespace ProductCatalog.DTOs
 {
-    public class APiResponse<T>
+    public class ApiResponse<T>
     {
         public bool Success { get; set; }
         public string? Message { get; set; }
         public T? Data { get; set; }
 
-        public APiResponse(bool success, T? data = default, string? message = null)
+        public ApiResponse(bool success, T? data = default, string? message = null)
         {
             Success = success;
             Data = data;
             Message = message;
         }
-        public static APiResponse<T> Ok(T data, string? message = null) =>
-            new APiResponse<T>(success: true, message: message, data: data);
+        public static ApiResponse<T> Ok(T data, string? message = null) =>
+            new ApiResponse<T>(success: true, message: message, data: data);
 
-        public static APiResponse<T> Fail(String message) =>
-            new APiResponse<T>(false, message: message, data: default);
+        public static ApiResponse<T> Fail(string message) =>
+            new ApiResponse<T>(false, data: default, message: message);
     }
 }
