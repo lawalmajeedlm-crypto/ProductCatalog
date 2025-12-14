@@ -1,55 +1,49 @@
-﻿using ProductCatalog.Data;
-using ProductCatalog.DTOs;
-using ProductCatalog.Models;
-using ProductCatalog.Repositories.Interfaces;
+﻿using Microsoft.EntityFrameworkCore;
+using ProductCatalog.Abstractions;
+using ProductCatalog.Abstractions.ProductOrder.Application.Abstractions;
+using ProductCatalog.Data;
+using System.Data;
 
 namespace ProductCatalog.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly CatalogDbContext _context;
+        private readonly AppDbContext _db;
+
+        public UnitOfWork(
+            AppDbContext db,
+            IProductRepository productRepo,
+            IOrderRepository orderRepo,
+            ICartRepository cartRepo,
+            IUserRepository userRepo)
+        {
+            _db = db;
+            Products = productRepo;
+            Orders = orderRepo;
+            Carts = cartRepo;
+            Users = userRepo;
+        }
 
         public IProductRepository Products { get; }
         public IOrderRepository Orders { get; }
-        public IOrderItemRepository OrderItems { get; }
         public ICartRepository Carts { get; }
-        public ICartItemRepository CartItems { get; }
         public IUserRepository Users { get; }
 
-        public UnitOfWork(
-            CatalogDbContext context,
-            IProductRepository products,
-            IOrderRepository orders,
-            IOrderItemRepository orderItems,
-            ICartRepository carts,
-            ICartItemRepository cartItems,
-            IUserRepository users)
-        {
-            _context = context;
-            Products = products;
-            Orders = orders;
-            OrderItems = orderItems;
-            Carts = carts;
-            CartItems = cartItems;
-            Users = users;
-        }
+        public Task<int> SaveChangesAsync(CancellationToken ct = default) =>
+            _db.SaveChangesAsync(ct);
 
-        public async Task<ApiResponse<bool>> SaveChangesAsync()
+        public async Task ExecuteInTransactionAsync(
+            Func<CancellationToken, Task> action,
+            CancellationToken ct,
+            IsolationLevel isolationLevel = IsolationLevel.ReadCommitted)
         {
-            var changes = await _context.SaveChangesAsync();
-            return changes > 0
-                ? ApiResponse<bool>.Ok(true, "Changes saved successfully")
-                : ApiResponse<bool>.Fail("No changes were saved");
-        }
-
-        public void Dispose()
-        {
-            _context.Dispose();
-        }
-
-        public IGenericRepository<T> Repository<T>() where T : BaseEntity
-        {
-            return new GenericRepository<T>(_context);
+            var strategy = _db.Database.CreateExecutionStrategy();
+            await strategy.ExecuteAsync(async () =>
+            {
+                await using var tx = await _db.Database.BeginTransactionAsync(isolationLevel, ct);
+                await action(ct);
+                await tx.CommitAsync(ct);
+            });
         }
     }
 }

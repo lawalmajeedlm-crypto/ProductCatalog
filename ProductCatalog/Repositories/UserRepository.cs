@@ -1,36 +1,37 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ProductCatalog.Abstractions;
 using ProductCatalog.Data;
-using ProductCatalog.DTOs;
 using ProductCatalog.Models;
-using ProductCatalog.Repositories.Interfaces;
 
 namespace ProductCatalog.Repositories
 {
-    public class UserRepository : GenericRepository<User>, IUserRepository
+    public class UserRepository : IUserRepository
     {
-        public UserRepository(CatalogDbContext context) : base(context) { }
+        private readonly AppDbContext _db;
 
-        public async Task<ApiResponse<User>> GetByFullNameAsync(string fullName)
+        public UserRepository(AppDbContext db)
         {
-            var user = await _context.Users
-                .AsNoTracking()
-                .FirstOrDefaultAsync(u => u.FullName == fullName && !u.IsDeleted);
-
-            return user is not null
-                ? ApiResponse<User>.Ok(user, "User retrieved successfully")
-                : ApiResponse<User>.Fail($"No user found with name {fullName}");
+            _db = db;
         }
 
-        public async Task<ApiResponse<User>> GetByRoleAsync(string role)
+        public async Task<User?> GetByEmailAsync(string email, CancellationToken ct = default)
         {
-            var users = await _context.Users
-                .AsNoTracking()
-                .Where(u => u.Role == role && !u.IsDeleted)
-                .ToListAsync();
+            return await _db.Users.FirstOrDefaultAsync(u => u.Email == email, ct);
+        }
 
-            return users.Any()
-                ? ApiResponse<User>.Ok(users.First(), $"Users with role {role} retrieved successfully")
-                : ApiResponse<User>.Fail($"No users found with role {role}");
+        public async Task<User?> GetByIdAsync(Guid id, CancellationToken ct = default)
+        {
+            return await _db.Users.FirstOrDefaultAsync(u => u.Id == id, ct);
+        }
+
+        public async Task AddAsync(User user, CancellationToken ct = default)
+        {
+            await _db.Users.AddAsync(user, ct);
+        }
+
+        public void Remove(User user)
+        {
+            _db.Users.Remove(user);
         }
     }
 }

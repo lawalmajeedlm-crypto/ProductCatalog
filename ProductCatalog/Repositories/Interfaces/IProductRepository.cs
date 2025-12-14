@@ -1,15 +1,17 @@
-﻿using ProductCatalog.Data;
-using ProductCatalog.DTOs;
-using ProductCatalog.Entities;
-using System.Threading.Tasks;
+﻿using ProductCatalog.Models;
 
-namespace ProductCatalog.Repositories.Interfaces
+namespace ProductCatalog.Abstractions
 {
-    public interface IProductRepository : IGenericRepository<Product>
+    namespace ProductOrder.Application.Abstractions
     {
-  
-        Task<ApiResponse<IEnumerable<Product>>> GetProductsInStockAsync();
-        Task<ApiResponse<IEnumerable<Product>>> SearchByNameAsync(string keyword);
-        Task<ApiResponse<IEnumerable<Product>>> GetProductsByPriceRangeAsync(decimal minPrice, decimal maxPrice);
+        public interface IProductRepository
+        {
+            Task<Product?> GetByIdAsync(Guid id, CancellationToken ct);
+            Task<List<Product>> GetAllAsync(CancellationToken ct);
+            Task AddAsync(Product product, CancellationToken ct);
+            Task UpdateAsync(Product product, CancellationToken ct);
+            Task SoftDeleteAsync(Product product, string deletedBy, CancellationToken ct);
+        }
     }
+
 }

@@ -1,32 +1,22 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ProductCatalog.Abstractions;
 using ProductCatalog.Data;
-using ProductCatalog.DTOs;
 using ProductCatalog.Models;
-using ProductCatalog.Repositories.Interfaces;
 
 namespace ProductCatalog.Repositories
 {
-    public class CartRepository : GenericRepository<Cart>, ICartRepository
+    public class CartRepository : ICartRepository
     {
+        private readonly AppDbContext _db;
+        public CartRepository(AppDbContext db) => _db = db;
 
-        public CartRepository(CatalogDbContext context) : base(context) { }
+        public async Task<Cart?> GetByIdAsync(Guid id, CancellationToken ct) =>
+            await _db.Carts.Include(c => c.Items).FirstOrDefaultAsync(c => c.Id == id, ct);
 
-        public async Task<ApiResponse<Cart>> GetCartWithItemsAsync(Guid cartId)
+        public async Task DeleteAsync(Cart cart, CancellationToken ct)
         {
-            var cart = await _context.Carts
-                .AsNoTracking()
-                .FirstOrDefaultAsync(c => c.Id == cartId);
-
-            if (cart is null)
-                return ApiResponse<Cart>.Fail($"Cart with Id {cartId} not found");
-
-            var items = await _context.CartItems
-                .Where(ci => ci.CartId == cartId)
-                .AsNoTracking()
-                .ToListAsync();
-
-            return ApiResponse<Cart>.Ok(cart, "Cart retrieved successfully");
+            _db.Carts.Remove(cart);
+            await _db.SaveChangesAsync(ct);
         }
     }
 }
-

@@ -1,55 +1,44 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ProductCatalog.Abstractions;
+using ProductCatalog.Abstractions.ProductOrder.Application.Abstractions;
 using ProductCatalog.Data;
-using ProductCatalog.DTOs;
-using ProductCatalog.Entities;
-using ProductCatalog.Repositories.Interfaces;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using ProductCatalog.Models;
 
 namespace ProductCatalog.Repositories
 {
-    public class ProductRepository : GenericRepository<Product>, IProductRepository
-    {
-        public ProductRepository(CatalogDbContext context) : base(context) { }
-
-        public async Task<ApiResponse<IEnumerable<Product>>> GetProductsInStockAsync()
+        public class ProductRepository : IProductRepository
         {
-            var products = await _context.Products
-                .Include(p => p.Pictures) 
-                .AsNoTracking()
-                .Where(p => p.StockQuantity > 0 && !p.IsDeleted)
-                .ToListAsync();
+            private readonly AppDbContext _db;
+            public ProductRepository(AppDbContext db) => _db = db;
 
-            return products.Any()
-                ? ApiResponse<IEnumerable<Product>>.Ok(products, "Products in stock retrieved successfully")
-                : ApiResponse<IEnumerable<Product>>.Fail("No products currently in stock");
+            public Task<Product?> GetByIdAsync(Guid id, CancellationToken ct) =>
+                _db.Products.Include(p => p.Category)
+                            .Include(p => p.Pictures)
+                            .FirstOrDefaultAsync(p => p.Id == id && !p.IsDeleted, ct);
+
+            public Task<List<Product>> GetAllAsync(CancellationToken ct) =>
+                _db.Products.Where(p => !p.IsDeleted)
+                            .Include(p => p.Category)
+                            .Include(p => p.Pictures)
+                            .AsNoTracking()
+                            .ToListAsync(ct);
+
+            public async Task AddAsync(Product product, CancellationToken ct) =>
+                await _db.Products.AddAsync(product, ct);
+
+            public Task UpdateAsync(Product product, CancellationToken ct)
+            {
+                _db.Products.Update(product);
+                return Task.CompletedTask;
+            }
+
+            public Task SoftDeleteAsync(Product product, string deletedBy, CancellationToken ct)
+            {
+                product.IsDeleted = true;
+                product.DeletedAt = DateTime.UtcNow;
+                product.DeletedBy = deletedBy;
+                _db.Products.Update(product);
+                return Task.CompletedTask;
+            }
         }
-
-        public async Task<ApiResponse<IEnumerable<Product>>> SearchByNameAsync(string keyword)
-        {
-            var products = await _context.Products
-                .Include(p => p.Pictures) 
-                .AsNoTracking()
-                .Where(p => p.Name.Contains(keyword) && !p.IsDeleted)
-                .ToListAsync();
-
-            return products.Any()
-                ? ApiResponse<IEnumerable<Product>>.Ok(products, $"Products matching '{keyword}' retrieved successfully")
-                : ApiResponse<IEnumerable<Product>>.Fail($"No products found matching '{keyword}'");
-        }
-
-        public async Task<ApiResponse<IEnumerable<Product>>> GetProductsByPriceRangeAsync(decimal minPrice, decimal maxPrice)
-        {
-            var products = await _context.Products
-                .Include(p => p.Pictures) 
-                .AsNoTracking()
-                .Where(p => p.Price >= minPrice && p.Price <= maxPrice && !p.IsDeleted)
-                .ToListAsync();
-
-            return products.Any()
-                ? ApiResponse<IEnumerable<Product>>.Ok(products, $"Products between {minPrice:C} and {maxPrice:C} retrieved successfully")
-                : ApiResponse<IEnumerable<Product>>.Fail($"No products found in the price range {minPrice:C} - {maxPrice:C}");
-        }
-    }
 }

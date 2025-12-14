@@ -1,20 +1,20 @@
-﻿using ProductCatalog.DTOs;
-using ProductCatalog.Entities;
-using ProductCatalog.Models;
+﻿using ProductCatalog.Abstractions.ProductOrder.Application.Abstractions;
+using System.Data;
 
-namespace ProductCatalog.Repositories.Interfaces
+namespace ProductCatalog.Abstractions
 {
-    public interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork
     {
         IProductRepository Products { get; }
         IOrderRepository Orders { get; }
-        IOrderItemRepository OrderItems { get; }
         ICartRepository Carts { get; }
-        ICartItemRepository CartItems { get; }
         IUserRepository Users { get; }
 
-        IGenericRepository<T> Repository<T>() where T : BaseEntity;
+        Task<int> SaveChangesAsync(CancellationToken ct = default);
 
-        Task<ApiResponse<bool>> SaveChangesAsync();
+        Task ExecuteInTransactionAsync(
+            Func<CancellationToken, Task> action,
+            CancellationToken ct,
+            IsolationLevel isolationLevel = IsolationLevel.ReadCommitted);
     }
 }

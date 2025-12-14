@@ -1,65 +1,97 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using ProductCatalog.Data;
 using ProductCatalog.DTOs;
-using ProductCatalog.Entities;
-using ProductCatalog.Repositories.Interfaces;
+using ProductCatalog.Models;
 
 namespace ProductCatalog.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class OrdersController : ControllerBase
+    [Authorize] // protect all order endpoints
+    public class OrdersController : BaseController
     {
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly AppDbContext _db;
+        public OrdersController(AppDbContext db) => _db = db;
 
-        public OrdersController(IUnitOfWork unitOfWork) => _unitOfWork = unitOfWork;
+        [HttpPost("checkout")]
+        public async Task<IActionResult> Checkout(OrderDtos.CheckoutDto dto, CancellationToken ct)
+        {
+            var cart = await _db.Carts
+                .Include(c => c.Items)
+                .ThenInclude(i => i.Product)
+                .FirstOrDefaultAsync(c => c.Id == dto.CartId, ct);
+
+            if (cart == null) return FailResponse<Order>("Cart not found");
+
+            var order = new Order
+            {
+                UserId = cart.UserId,
+                CustomerName = dto.CustomerName,
+                TotalAmount = cart.TotalAmount,
+                OrderLines = cart.Items.Select(i => new OrderLine
+                {
+                    ProductId = i.ProductId,
+                    Sku = i.Sku,
+                    Quantity = i.Quantity,
+                    UnitPrice = i.UnitPrice,
+                    LineTotal = i.LineTotal
+                }).ToList()
+            };
+
+            _db.Orders.Add(order);
+            _db.Carts.Remove(cart); // clear cart after checkout
+            await _db.SaveChangesAsync(ct);
+
+            return OkResponse(order, "Order placed successfully");
+        }
 
         [HttpGet]
-        public async Task<ActionResult<ApiResponse<IEnumerable<Order>>>> GetAll()
-            => Ok(await _unitOfWork.Orders.GetAllAsync());
-
-        [HttpGet("{id:guid}")]
-        public async Task<ActionResult<ApiResponse<Order>>> Get(Guid id)
+        public async Task<IActionResult> GetAll(CancellationToken ct)
         {
-            var result = await _unitOfWork.Orders.GetByIdAsync(id);
-            if (!result.Success || result.Data is null) return NotFound(result);
-            return Ok(result);
+            var orders = await _db.Orders
+                .Include(o => o.OrderLines)
+                .ToListAsync(ct);
+
+            return OkResponse(orders, "Orders retrieved successfully");
         }
 
-        [HttpPost]
-        public async Task<ActionResult<ApiResponse<Order>>> Create(Order order)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(Guid id, CancellationToken ct)
         {
-            await _unitOfWork.Orders.AddAsync(order);
-            var saveResult = await _unitOfWork.SaveChangesAsync();
-            if (!saveResult.Success) return BadRequest(saveResult);
-            return Ok(ApiResponse<Order>.Ok(order, "Order created successfully"));
+            var order = await _db.Orders
+                .Include(o => o.OrderLines)
+                .FirstOrDefaultAsync(o => o.Id == id, ct);
+
+            return order == null
+                ? FailResponse<Order>("Order not found")
+                : OkResponse(order, "Order retrieved successfully");
         }
 
-        [HttpPut("{id:guid}")]
-        public async Task<ActionResult<ApiResponse<Order>>> Update(Guid id, Order order)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(Guid id, [FromBody] OrderDtos.UpdateOrderDto dto, CancellationToken ct)
         {
-            var existing = await _unitOfWork.Orders.GetByIdAsync(id);
-            if (!existing.Success || existing.Data is null) return NotFound(existing);
+            var order = await _db.Orders.Include(o => o.OrderLines).FirstOrDefaultAsync(o => o.Id == id, ct);
+            if (order == null) return FailResponse<Order>("Order not found");
 
-            existing.Data.Status = order.Status;
+            order.CustomerName = dto.CustomerName ?? order.CustomerName;
+            order.Status = dto.Status ?? order.Status;
 
-            await _unitOfWork.Orders.UpdateAsync(existing.Data);
-            var saveResult = await _unitOfWork.SaveChangesAsync();
-            if (!saveResult.Success) return BadRequest(saveResult);
-
-            return Ok(ApiResponse<Order>.Ok(existing.Data, "Order updated successfully"));
+            await _db.SaveChangesAsync(ct);
+            return OkResponse(order, "Order updated successfully");
         }
 
-        [HttpDelete("{id:guid}")]
-        public async Task<ActionResult<ApiResponse<bool>>> Delete(Guid id)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id, CancellationToken ct)
         {
-            var existing = await _unitOfWork.Orders.GetByIdAsync(id);
-            if (!existing.Success || existing.Data is null) return NotFound(existing);
+            var order = await _db.Orders.FirstOrDefaultAsync(o => o.Id == id, ct);
+            if (order == null) return FailResponse<Order>("Order not found");
 
-            await _unitOfWork.Orders.DeleteAsync(id);
-            var saveResult = await _unitOfWork.SaveChangesAsync();
-            if (!saveResult.Success) return BadRequest(saveResult);
+            _db.Orders.Remove(order);
+            await _db.SaveChangesAsync(ct);
 
-            return Ok(ApiResponse<bool>.Ok(true, "Order deleted successfully"));
+            return OkResponse("Order deleted successfully");
         }
     }
 }
