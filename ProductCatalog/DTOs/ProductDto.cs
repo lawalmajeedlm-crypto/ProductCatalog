@@ -10,12 +10,13 @@
         );
 
         public record UpdateProductRequest(
-                Guid Id,
-                string Name,
-                string? Description,
-                decimal Price,
-                int StockQuantity
-            );
+            Guid Id,
+            string Name,
+            string? Description,
+            decimal Price,
+            int StockQuantity
+        );
+
         public record ProductResponse(
             Guid Id,
             string Name,
@@ -25,7 +26,17 @@
             DateTime CreateUtc,
             DateTime? UpdateUtc,
             string? CreatedBy,
-            string? UpdatedBy
+            string? UpdatedBy,
+            IEnumerable<PictureDto>? Pictures 
+        );
+
+        
+        public record PictureDto(
+            Guid Id,
+            string Url,
+            string? AltText,
+            string? MimeType,
+            int SortOrder
         );
     }
 }

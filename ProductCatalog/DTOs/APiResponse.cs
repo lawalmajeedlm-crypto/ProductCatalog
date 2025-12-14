@@ -2,9 +2,9 @@
 {
     public class ApiResponse<T>
     {
-        public bool Success { get; set; }
-        public string? Message { get; set; }
-        public T? Data { get; set; }
+        public bool Success { get; }
+        public string? Message { get; }
+        public T? Data { get; }
 
         public ApiResponse(bool success, T? data = default, string? message = null)
         {
@@ -13,9 +13,9 @@
             Message = message;
         }
         public static ApiResponse<T> Ok(T data, string? message = null) =>
-            new ApiResponse<T>(success: true, message: message, data: data);
+            new ApiResponse<T>(true, data, message);
 
         public static ApiResponse<T> Fail(string message) =>
-            new ApiResponse<T>(false, data: default, message: message);
+            new ApiResponse<T>(false, default, message);
     }
 }

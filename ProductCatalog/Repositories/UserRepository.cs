@@ -10,45 +10,27 @@ namespace ProductCatalog.Repositories
     {
         public UserRepository(CatalogDbContext context) : base(context) { }
 
-        public async Task<ApiResponse<User>> GetByEmailAsync(string email)
+        public async Task<ApiResponse<User>> GetByFullNameAsync(string fullName)
         {
             var user = await _context.Users
                 .AsNoTracking()
-                .FirstOrDefaultAsync(u => u.Email == email && !u.IsDeleted);
+                .FirstOrDefaultAsync(u => u.FullName == fullName && !u.IsDeleted);
 
             return user is not null
                 ? ApiResponse<User>.Ok(user, "User retrieved successfully")
-                : ApiResponse<User>.Fail($"No user found with email {email}");
+                : ApiResponse<User>.Fail($"No user found with name {fullName}");
         }
 
-        public async Task<ApiResponse<User>> AddAsync(User user)
+        public async Task<ApiResponse<User>> GetByRoleAsync(string role)
         {
-            await _context.Users.AddAsync(user);
-            await _context.SaveChangesAsync();
-            return ApiResponse<User>.Ok(user, "User added successfully");
-        }
+            var users = await _context.Users
+                .AsNoTracking()
+                .Where(u => u.Role == role && !u.IsDeleted)
+                .ToListAsync();
 
-        public async Task<ApiResponse<User>> UpdateAsync(User user)
-        {
-            _context.Users.Update(user);
-            await _context.SaveChangesAsync();
-            return ApiResponse<User>.Ok(user, "User updated successfully");
-        }
-
-        public async Task<ApiResponse<bool>> SoftDeleteAsync(Guid id, string deletedBy)
-        {
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
-            if (user == null)
-                return ApiResponse<bool>.Fail("User not found");
-
-            user.IsDeleted = true;
-            user.DeletedAt = DateTime.UtcNow;
-            user.DeletedBy = deletedBy;
-
-            _context.Users.Update(user);
-            await _context.SaveChangesAsync();
-
-            return ApiResponse<bool>.Ok(true, "User soft deleted successfully");
+            return users.Any()
+                ? ApiResponse<User>.Ok(users.First(), $"Users with role {role} retrieved successfully")
+                : ApiResponse<User>.Fail($"No users found with role {role}");
         }
     }
 }
