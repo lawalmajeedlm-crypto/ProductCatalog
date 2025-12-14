@@ -1,10 +1,10 @@
-﻿using ProductCatalog.DTOs;
-using ProductCatalog.Models;
+﻿using ProductCatalog.Models;
 
-namespace ProductCatalog.Repositories.Interfaces
+namespace ProductCatalog.Abstractions
 {
-    public interface ICartRepository : IGenericRepository<Cart>
+    public interface ICartRepository
     {
-        Task<ApiResponse<Cart>> GetCartWithItemsAsync(Guid cartId);
+        Task<Cart?> GetByIdAsync(Guid id, CancellationToken ct);
+        Task DeleteAsync(Cart cart, CancellationToken ct);
     }
 }

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\ProductCatalog.csproj": {}
+    "C:\\Users\\aolan\\OneDrive\\Desktop\\ProductCatalog\\ProductCatalog\\ProductCatalog.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\ProductCatalog.csproj": {
+    "C:\\Users\\aolan\\OneDrive\\Desktop\\ProductCatalog\\ProductCatalog\\ProductCatalog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\ProductCatalog.csproj",
+        "projectUniqueName": "C:\\Users\\aolan\\OneDrive\\Desktop\\ProductCatalog\\ProductCatalog\\ProductCatalog.csproj",
         "projectName": "ProductCatalog",
-        "projectPath": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\ProductCatalog.csproj",
-        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HP\\source\\repos\\ProductCatalog\\ProductCatalog\\obj\\",
+        "projectPath": "C:\\Users\\aolan\\OneDrive\\Desktop\\ProductCatalog\\ProductCatalog\\ProductCatalog.csproj",
+        "packagesPath": "C:\\Users\\aolan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\aolan\\OneDrive\\Desktop\\ProductCatalog\\ProductCatalog\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\aolan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -54,6 +54,10 @@
             "BCrypt.Net-Core": {
               "target": "Package",
               "version": "[1.6.0, )"
+            },
+            "FluentValidation.DependencyInjectionExtensions": {
+              "target": "Package",
+              "version": "[12.1.1, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",

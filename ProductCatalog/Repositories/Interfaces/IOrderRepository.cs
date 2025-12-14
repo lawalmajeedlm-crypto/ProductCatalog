@@ -1,11 +1,13 @@
-﻿using ProductCatalog.DTOs;
-using ProductCatalog.Entities;
+﻿using ProductCatalog.Models;
 
-namespace ProductCatalog.Repositories.Interfaces
+namespace ProductCatalog.Abstractions
 {
-    public interface IOrderRepository : IGenericRepository<Order>
+    public interface IOrderRepository
     {
-        Task<ApiResponse<IEnumerable<Order>>> GetOrdersByStatusAsync(string status);
-        Task<ApiResponse<Order>> GetOrderWithItemsAsync(Guid orderId);
+        Task AddAsync(Order order, CancellationToken ct);
+        Task<Order?> GetByIdAsync(Guid id, CancellationToken ct);
+        Task<List<Order>> GetAllAsync(CancellationToken ct);
+        Task UpdateAsync(Order order, CancellationToken ct);
+        Task SoftDeleteAsync(Order order, string deletedBy, CancellationToken ct);
     }
 }

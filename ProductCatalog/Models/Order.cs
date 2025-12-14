@@ -1,13 +1,12 @@
-﻿using ProductCatalog.Models;
-
-namespace ProductCatalog.Entities;
-
-public sealed class Order : BaseEntity
+﻿
+namespace ProductCatalog.Models
 {
-    public Guid UserId { get; set; }
-    public User User { get; set; } = null!;
-    public decimal TotalAmount { get; set; }
-    public string Status { get; set; } = "Placed";
-
-    public ICollection<OrderItem> Items { get; set; } = new List<OrderItem>();
+    public class Order : BaseEntity
+    {
+        public decimal TotalAmount { get; set; }
+        public List<OrderLine> OrderLines { get; set; } = new();
+        public Guid UserId { get; internal set; }
+        public string CustomerName { get; set; } = default!;
+        public OrderStatus Status { get; set; } = OrderStatus.Pending;
+    }
 }

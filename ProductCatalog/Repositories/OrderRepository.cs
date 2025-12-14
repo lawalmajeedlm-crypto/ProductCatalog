@@ -1,42 +1,41 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ProductCatalog.Abstractions;
 using ProductCatalog.Data;
-using ProductCatalog.DTOs;
-using ProductCatalog.Entities;
-using ProductCatalog.Repositories.Interfaces;
+using ProductCatalog.Models;
 
 namespace ProductCatalog.Repositories
 {
-    public class OrderRepository : GenericRepository<Order>, IOrderRepository
+    public class OrderRepository : IOrderRepository
     {
-        public OrderRepository(CatalogDbContext context) : base(context) { }
+        private readonly AppDbContext _db;
+        public OrderRepository(AppDbContext db) => _db = db;
 
-        public async Task<ApiResponse<IEnumerable<Order>>> GetOrdersByStatusAsync(string status)
+        public async Task AddAsync(Order order, CancellationToken ct) =>
+            await _db.Orders.AddAsync(order, ct);
+
+        public Task<Order?> GetByIdAsync(Guid id, CancellationToken ct) =>
+            _db.Orders.Include(o => o.OrderLines)
+                      .FirstOrDefaultAsync(o => o.Id == id, ct);
+
+        public Task<List<Order>> GetAllAsync(CancellationToken ct) =>
+            _db.Orders.Include(o => o.OrderLines)
+                      .AsNoTracking()
+                      .ToListAsync(ct);
+
+        public Task UpdateAsync(Order order, CancellationToken ct)
         {
-            var orders = await _context.Orders
-                .Where(o => o.Status == status)
-                .AsNoTracking()
-                .ToListAsync();
-
-            return orders.Any()
-                ? ApiResponse<IEnumerable<Order>>.Ok(orders)
-                : ApiResponse<IEnumerable<Order>>.Fail($"No orders found with status '{status}'");
+            _db.Orders.Update(order);
+            return Task.CompletedTask;
         }
 
-        public async Task<ApiResponse<Order>> GetOrderWithItemsAsync(Guid orderId)
+        public Task SoftDeleteAsync(Order order, string deletedBy, CancellationToken ct)
         {
-            var order = await _context.Orders
-                .AsNoTracking()
-                .FirstOrDefaultAsync(o => o.Id == orderId);
-
-            if (order is null)
-                return ApiResponse<Order>.Fail($"Order with Id {orderId} not found");
-
-            var items = await _context.OrderItems
-                .Where(oi => oi.OrderId == orderId)
-                .AsNoTracking()
-                .ToListAsync();
-
-            return ApiResponse<Order>.Ok(order, "Order retrieved successfully");
+            order.IsDeleted = true;
+            order.DeletedAt = DateTime.UtcNow;
+            order.DeletedBy = deletedBy;
+            _db.Orders.Update(order);
+            return Task.CompletedTask;
         }
+
     }
 }

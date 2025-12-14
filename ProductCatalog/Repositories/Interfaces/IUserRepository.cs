@@ -1,12 +1,12 @@
-﻿using ProductCatalog.DTOs;
-using ProductCatalog.Models;
+﻿using ProductCatalog.Models;
 
-namespace ProductCatalog.Repositories.Interfaces
+namespace ProductCatalog.Abstractions
 {
-    public interface IUserRepository : IGenericRepository<User>
+    public interface IUserRepository
     {
-        Task<ApiResponse<User>> GetByFullNameAsync(string fullName);
-        Task<ApiResponse<User>> GetByRoleAsync(string role);
-       
+        Task<User?> GetByEmailAsync(string email, CancellationToken ct = default);
+        Task<User?> GetByIdAsync(Guid id, CancellationToken ct = default);
+        Task AddAsync(User user, CancellationToken ct = default);
+        void Remove(User user);
     }
 }
